@@ -17,12 +17,6 @@ public class Player : MonoBehaviour
         isGrounded = true;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private void FixedUpdate()
     {
         hInput = joystick.Horizontal * moveSpeed;
