@@ -1,0 +1,12 @@
+# ninja log v5
+45	258	8049490795559885	FramePacing/CMakeFiles/swappywrapper.dir/UnitySwappyWrapper.cpp.o	c8e3179afead7cd
+259	386	8049490796763574	D:/Coding/traveler-of-worlds/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/u63m6w15/obj/arm64-v8a/libswappywrapper.so	fde1373ed669f163
+27	707	8049490800050296	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	c4298524c0eb98a3
+22	711	8049490800061852	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9fddd6729d3534bc
+6	727	8049490800242161	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	c37f80d992adbe56
+38	731	8049490800283437	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	6b38611c352a5bab
+11	761	8049490800569035	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	edcf770325a804a4
+32	876	8049490801742124	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	766d3a92e00dabdb
+17	896	8049490801938863	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	acdc38f93cead2b3
+1	971	8049490802660811	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	14e892485d0ce780
+971	1041	8049490803375752	D:/Coding/traveler-of-worlds/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/u63m6w15/obj/arm64-v8a/libgame.so	1d6bc997d0457e76
