@@ -10,11 +10,13 @@ public class Car : MonoBehaviour, Interactable
     public GameObject exitButton;
     public GameObject player;
     public GameObject[] toDeactivate;
+    public GameObject playerIcon;
 
     void Start()
     {
         exitButton.SetActive(false);
         GetComponent<CarMovement>().enabled = false;
+        playerIcon.SetActive(false);
     }
 
     public void Interact()
@@ -64,5 +66,10 @@ public class Car : MonoBehaviour, Interactable
         player.GetComponent<BoxCollider2D>().enabled = true;
         player.GetComponent<Player>().enabled = true;
         GetComponent<CarMovement>().enabled = false;
+    }
+
+    public GameObject interactIcon()
+    {
+        return playerIcon;
     }
 }
