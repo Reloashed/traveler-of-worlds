@@ -2,7 +2,7 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
 
-public class npc : MonoBehaviour, Interactable, NpcInteractable
+public class npc : MonoBehaviour, NpcInteractable
 {
     private bool isTalking;
     private int iterator = 0;
@@ -10,17 +10,17 @@ public class npc : MonoBehaviour, Interactable, NpcInteractable
     public new string name;
     public string[] voicelines;
 
-    public GameObject talkButton;
     public GameObject playerIcon;
+    public GameObject speechBubbleIcon;
     public TextMeshProUGUI talkText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        talkButton.SetActive(false);
         talkText.text = "";
         isTalking = false;
         playerIcon.SetActive(false);
+        speechBubbleIcon.SetActive(false);
     }
 
     void Update()
@@ -40,7 +40,9 @@ public class npc : MonoBehaviour, Interactable, NpcInteractable
     {
         if (!isTalking)
         {
+            playerIcon.SetActive(false);
             isTalking = true;
+            speechBubbleIcon.SetActive(true);
             startChat(iterator);
         }
     }
@@ -71,11 +73,25 @@ public class npc : MonoBehaviour, Interactable, NpcInteractable
             talkText.text = "";
             iterator = 0;
             isTalking = false;
+            speechBubbleIcon.SetActive(false);
         }
     }
 
     public GameObject interactIcon()
     {
         return playerIcon;
+    }
+
+    public GameObject speechBubble()
+    {
+        return speechBubbleIcon;
+    }
+
+    public void reset()
+    {
+        playerIcon.SetActive(false);
+        speechBubbleIcon.SetActive(false);
+        talkText.text = "";
+        isTalking = false;
     }
 }
