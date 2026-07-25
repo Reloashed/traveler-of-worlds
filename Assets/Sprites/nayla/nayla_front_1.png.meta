@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: e983bff52f59af84a92d6ce206657dd0
+guid: 6e41308147e02944691bb25a459573f4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4429447533671005899
-    second: nayla_front_0
+      213: 486755146456173272
+    second: nayla_front_1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nayla_front_0
+      name: nayla_front_1_0
       rect:
         serializedVersion: 2
         x: 35
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bceb0bb401f887d30800000000000000
-      internalID: 4429447533671005899
+      spriteID: 8da0d1d0a3d41c600800000000000000
+      internalID: 486755146456173272
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      nayla_front_0: 4429447533671005899
+      nayla_front_1_0: 486755146456173272
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
