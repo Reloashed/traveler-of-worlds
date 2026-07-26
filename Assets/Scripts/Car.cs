@@ -11,6 +11,7 @@ public class Car : MonoBehaviour, Interactable
     public GameObject player;
     public GameObject[] toDeactivate;
     public GameObject playerIcon;
+    public Animator animator;
 
     void Start()
     {
@@ -47,9 +48,11 @@ public class Car : MonoBehaviour, Interactable
         }
         player.layer = LayerMask.NameToLayer("PlayerInCar");
         player.GetComponent<Player>().enabled = false;
+        player.GetComponent<SpriteRenderer>().enabled = false;
         player.transform.SetParent(transform);
         player.transform.localPosition = Vector2.zero;
         GetComponent<CarMovement>().enabled = true;
+        animator.SetBool("isEmpty", false);
     }
 
     public void ExitCar()
@@ -65,7 +68,9 @@ public class Car : MonoBehaviour, Interactable
         player.layer = LayerMask.NameToLayer("Player");
         player.GetComponent<BoxCollider2D>().enabled = true;
         player.GetComponent<Player>().enabled = true;
+        player.GetComponent<SpriteRenderer>().enabled = true;
         GetComponent<CarMovement>().enabled = false;
+        animator.SetBool("isEmpty", true);
     }
 
     public GameObject interactIcon()
