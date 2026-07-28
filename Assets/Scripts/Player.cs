@@ -47,7 +47,7 @@ public class Player : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Car"))
         {
             isGrounded = true;
             animator.SetBool("isJumping", false);
@@ -56,7 +56,7 @@ public class Player : MonoBehaviour
 
     public void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground"))
+        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Car"))
         {
             isGrounded = false;
             animator.SetBool("isJumping", true);
