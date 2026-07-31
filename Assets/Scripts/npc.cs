@@ -9,17 +9,14 @@ public class npc : MonoBehaviour, NpcInteractable
 
     public new string name;
     public string[] voicelines;
-
-    public GameObject playerIcon;
     public GameObject speechBubbleIcon;
-    public TextMeshProUGUI talkText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        talkText.text = "";
+        UIManager.Instance.talkText.text = "";
         isTalking = false;
-        playerIcon.SetActive(false);
+        UIManager.Instance.npcPlayerIcon.SetActive(false);
         speechBubbleIcon.SetActive(false);
     }
 
@@ -40,7 +37,7 @@ public class npc : MonoBehaviour, NpcInteractable
     {
         if (!isTalking)
         {
-            playerIcon.SetActive(false);
+            UIManager.Instance.npcPlayerIcon.SetActive(false);
             isTalking = true;
             speechBubbleIcon.SetActive(true);
             startChat(iterator);
@@ -66,11 +63,11 @@ public class npc : MonoBehaviour, NpcInteractable
     {
         if (iterator < voicelines.Length && isTalking)
         {
-            talkText.text = voicelines[i];
+            UIManager.Instance.talkText.text = voicelines[i];
             iterator++;
         } else
         {
-            talkText.text = "";
+            UIManager.Instance.talkText.text = "";
             iterator = 0;
             isTalking = false;
             speechBubbleIcon.SetActive(false);
@@ -79,7 +76,7 @@ public class npc : MonoBehaviour, NpcInteractable
 
     public GameObject interactIcon()
     {
-        return playerIcon;
+        return UIManager.Instance.npcPlayerIcon;
     }
 
     public GameObject speechBubble()
@@ -89,9 +86,9 @@ public class npc : MonoBehaviour, NpcInteractable
 
     public void reset()
     {
-        playerIcon.SetActive(false);
+        UIManager.Instance.npcPlayerIcon.SetActive(false);
         speechBubbleIcon.SetActive(false);
-        talkText.text = "";
+        UIManager.Instance.talkText.text = "";
         isTalking = false;
     }
 }

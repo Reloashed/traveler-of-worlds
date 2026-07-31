@@ -64,7 +64,7 @@ public class Car : MonoBehaviour, Interactable
         {
             toDeactivate[i].SetActive(true);
         }
-        player.transform.localPosition = Vector2.right * 1f;
+        player.transform.localPosition = Vector2.right * 2f;
         player.transform.SetParent(null);
         player.layer = LayerMask.NameToLayer("Player");
         player.GetComponent<BoxCollider2D>().enabled = true;
