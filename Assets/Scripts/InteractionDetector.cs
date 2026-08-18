@@ -8,7 +8,6 @@ public class InteractionDetector : MonoBehaviour
     private NpcInteractable npcInteractableInRange = null;
 
     public GameObject interactionButton;
-    public TextMeshProUGUI interactionText;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -36,14 +35,12 @@ public class InteractionDetector : MonoBehaviour
             interactableInRange = interactable;
             interactableInRange.interactIcon().SetActive(true);
             interactionButton.SetActive(true);
-            interactionText.text = interactable.buttonText();
         }
         if (collision.TryGetComponent(out NpcInteractable npcInteractable) && npcInteractable.IsInteractable())
         {
             npcInteractableInRange = npcInteractable;
             npcInteractableInRange.interactIcon().SetActive(true);
             interactionButton.SetActive(true);
-            interactionText.text = npcInteractable.buttonText();
         }
     }
 

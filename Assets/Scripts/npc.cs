@@ -17,6 +17,7 @@ public class npc : MonoBehaviour, NpcInteractable
         UIManager.Instance.talkText.text = "";
         isTalking = false;
         UIManager.Instance.npcPlayerIcon.SetActive(false);
+        UIManager.Instance.talkTextBg.SetActive(false);
         speechBubbleIcon.SetActive(false);
     }
 
@@ -40,6 +41,7 @@ public class npc : MonoBehaviour, NpcInteractable
             UIManager.Instance.npcPlayerIcon.SetActive(false);
             isTalking = true;
             speechBubbleIcon.SetActive(true);
+            UIManager.Instance.talkTextBg.SetActive(true);
             startChat(iterator);
         }
     }
@@ -47,11 +49,6 @@ public class npc : MonoBehaviour, NpcInteractable
     public bool IsInteractable()
     {
         return !isTalking;
-    }
-
-    public string buttonText()
-    {
-        return "Talk to " + name;
     }
 
     public string[] speechBubles()
@@ -71,6 +68,7 @@ public class npc : MonoBehaviour, NpcInteractable
             iterator = 0;
             isTalking = false;
             speechBubbleIcon.SetActive(false);
+            UIManager.Instance.talkTextBg.SetActive(false);
         }
     }
 
@@ -89,6 +87,7 @@ public class npc : MonoBehaviour, NpcInteractable
         UIManager.Instance.npcPlayerIcon.SetActive(false);
         speechBubbleIcon.SetActive(false);
         UIManager.Instance.talkText.text = "";
+        UIManager.Instance.talkTextBg.SetActive(false);
         isTalking = false;
     }
 }

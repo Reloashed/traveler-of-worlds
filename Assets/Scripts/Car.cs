@@ -7,17 +7,28 @@ public class Car : MonoBehaviour, Interactable
 
     private bool isOccupied = false;
 
-    public GameObject exitButton;
-    public GameObject player;
-    public GameObject[] toDeactivate;
-    public GameObject playerIcon;
+    private GameObject exitButton;
+    private GameObject jumpButton;
+    private GameObject player;
+    private GameObject playerIcon;
     public Animator animator;
+    private CarMovement carMovement;
 
-    void Start()
+    public void Setup(
+        GameObject player,
+        FixedJoystick joystick,
+        GameObject playerIcon,
+        GameObject exitButton,
+        GameObject jumpButton)
     {
-        exitButton.SetActive(false);
-        GetComponent<CarMovement>().enabled = false;
-        playerIcon.SetActive(false);
+        this.player = player;
+        this.playerIcon = playerIcon;
+        this.exitButton = exitButton;
+        this.jumpButton = jumpButton;
+
+        carMovement = GetComponent<CarMovement>();
+        carMovement.joystick = joystick;
+        carMovement.enabled = false;
     }
 
     public void Interact()
@@ -33,19 +44,11 @@ public class Car : MonoBehaviour, Interactable
         return !isOccupied;
     }
 
-    public string buttonText()
-    {
-        return "Enter Car";
-    }
-
     private void EnterCar()
     {
         isOccupied = true;
+        jumpButton.SetActive(false);
         exitButton.SetActive(true);
-        for (int i = 0; i < toDeactivate.Length; i++)
-        {
-            toDeactivate[i].SetActive(false);
-        }
         player.layer = LayerMask.NameToLayer("PlayerInCar");
         player.GetComponent<Player>().enabled = false;
         player.GetComponent<SpriteRenderer>().enabled = false;
@@ -60,10 +63,7 @@ public class Car : MonoBehaviour, Interactable
     {
         isOccupied = false;
         exitButton.SetActive(false);
-        for (int i = 0; i < toDeactivate.Length; i++)
-        {
-            toDeactivate[i].SetActive(true);
-        }
+        jumpButton.SetActive(true);
         player.transform.localPosition = Vector2.right * 2f;
         player.transform.SetParent(null);
         player.layer = LayerMask.NameToLayer("Player");
