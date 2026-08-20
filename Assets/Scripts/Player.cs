@@ -2,20 +2,33 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public static Player Instance;
+
     public Animator animator;
     public FixedJoystick joystick;
     public float moveSpeed;
     public float jumpForce;
+    public bool isGrounded;
 
     private Rigidbody2D rb;
-    private bool isGrounded;
     private float hInput;
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        isGrounded = true;
+        isGrounded = false;
     }
 
     private void FixedUpdate()
@@ -42,24 +55,6 @@ public class Player : MonoBehaviour
         if (isGrounded)
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-        }
-    }
-
-    public void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Car"))
-        {
-            isGrounded = true;
-            animator.SetBool("isJumping", false);
-        }
-    }
-
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.CompareTag("Car"))
-        {
-            isGrounded = false;
-            animator.SetBool("isJumping", true);
         }
     }
 }
