@@ -4972,12 +4972,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3630072074c5d0c4382ba38c8effcc48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  exitButton: {fileID: 0}
-  player: {fileID: 0}
-  toDeactivate:
-  - {fileID: 0}
-  - {fileID: 0}
-  playerIcon: {fileID: 0}
   animator: {fileID: 3310547785440767866}
 --- !u!114 &5046539353984431403
 MonoBehaviour:
@@ -4992,7 +4986,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   joystick: {fileID: 0}
-  moveSpeed: 0.4
   animator: {fileID: 3310547785440767866}
   particleSystem: {fileID: 4087189542043466285}
 --- !u!95 &3310547785440767866
