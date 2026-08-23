@@ -12,8 +12,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject carInteractIcon;
     public Button exitCarButton;
     public GameObject jumpButton;
-    private GameObject carInstance;
 
+    private GameObject carInstance;
     private int currentLevel = 1;
     private bool loadCar;
 
@@ -80,6 +80,12 @@ public class SpawnManager : MonoBehaviour
             {
                 carInstance.transform.position = carSpawn.transform.position;
             }
+        }
+        GameObject activatorNPC = GameObject.FindWithTag("ActivatorNPC");
+        GameObject toActivate = GameObject.FindWithTag("Level" + currentLevel + "Activator");
+        if (activatorNPC != null && toActivate != null)
+        {
+            activatorNPC.GetComponent<npc>().toActivate = toActivate;
         }
     }
 }

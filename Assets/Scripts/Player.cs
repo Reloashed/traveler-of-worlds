@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour
     public float moveSpeed;
     public float jumpForce;
     public bool isGrounded;
+    public GameObject danceButton;
 
     private Rigidbody2D rb;
     private float hInput;
@@ -56,5 +58,11 @@ public class Player : MonoBehaviour
         {
             rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
+    }
+
+    public void Dance()
+    {
+        Console.WriteLine("Dance");
+        danceButton.SetActive(false);
     }
 }
