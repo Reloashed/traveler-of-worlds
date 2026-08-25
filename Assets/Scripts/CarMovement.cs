@@ -8,7 +8,7 @@ public class CarMovement : MonoBehaviour
     public FixedJoystick joystick;
     private float moveSpeed = 1f;
     public Animator animator;
-    public ParticleSystem particleSystem;
+    public ParticleSystem carParticles;
 
     void FixedUpdate()
     {
@@ -28,7 +28,7 @@ public class CarMovement : MonoBehaviour
         {
             if (!isParticleOn)
             {
-                particleSystem.Play();
+                carParticles.Play();
                 isParticleOn = true;
             }
         }
@@ -36,7 +36,7 @@ public class CarMovement : MonoBehaviour
         {
             if (isParticleOn)
             {
-                particleSystem.Stop();
+                carParticles.Stop();
                 isParticleOn = false;
             }
         }

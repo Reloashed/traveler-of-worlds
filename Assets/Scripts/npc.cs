@@ -1,19 +1,20 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
+using System.Runtime.InteropServices;
 
 public class npc : MonoBehaviour, NpcInteractable
 {
     private bool isTalking;
     private int iterator = 0;
+    private Activator activator = null;
 
     public string[] voicelines;
     public GameObject speechBubbleIcon;
     public Animator animator;
     public AudioSource audioSource;
     public AudioClip[] audioClips;
-    public bool activator;
-    public GameObject toActivate;
+    public bool isActivator;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -23,6 +24,10 @@ public class npc : MonoBehaviour, NpcInteractable
         UIManager.Instance.npcPlayerIcon.SetActive(false);
         UIManager.Instance.talkTextBg.SetActive(false);
         speechBubbleIcon.SetActive(false);
+        if (isActivator)
+        {
+            activator = GetComponent<Activator>();
+        }
     }
 
     void Update()
@@ -72,6 +77,10 @@ public class npc : MonoBehaviour, NpcInteractable
             iterator++;
         } else
         {
+            if (iterator > 0 && isActivator)
+            {
+                activator.Activate();
+            }
             reset();
         }
     }
@@ -95,14 +104,5 @@ public class npc : MonoBehaviour, NpcInteractable
         isTalking = false;
         animator.SetBool("isTalking", false);
         iterator = 0;
-        Activate();
-    }
-
-    public void Activate()
-    {
-        if (activator)
-        {
-            toActivate.SetActive(true);
-        }
     }
 }

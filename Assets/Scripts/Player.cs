@@ -62,7 +62,7 @@ public class Player : MonoBehaviour
 
     public void Dance()
     {
-        Console.WriteLine("Dance");
+        Debug.Log("Dance Mance");
         danceButton.SetActive(false);
     }
 }

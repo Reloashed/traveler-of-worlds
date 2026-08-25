@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -80,12 +81,6 @@ public class SpawnManager : MonoBehaviour
             {
                 carInstance.transform.position = carSpawn.transform.position;
             }
-        }
-        GameObject activatorNPC = GameObject.FindWithTag("ActivatorNPC");
-        GameObject toActivate = GameObject.FindWithTag("Level" + currentLevel + "Activator");
-        if (activatorNPC != null && toActivate != null)
-        {
-            activatorNPC.GetComponent<npc>().toActivate = toActivate;
         }
     }
 }

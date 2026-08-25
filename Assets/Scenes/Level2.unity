@@ -573,6 +573,7 @@ GameObject:
   - component: {fileID: 278948665}
   - component: {fileID: 278948671}
   - component: {fileID: 278948670}
+  - component: {fileID: 278948672}
   m_Layer: 0
   m_Name: hiphop_npc_idle_1_0
   m_TagString: ActivatorNPC
@@ -725,8 +726,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 28156f77adb88fc44bffce2c00476806, type: 3}
   - {fileID: 8300000, guid: 4b01826169b0fc64a98004540e3c69c5, type: 3}
   - {fileID: 8300000, guid: 224715f99fefb624a91d04c468014c03, type: 3}
-  activator: 1
-  toActivate: {fileID: 0}
+  isActivator: 1
 --- !u!212 &278948668
 SpriteRenderer:
   serializedVersion: 2
@@ -891,6 +891,18 @@ PolygonCollider2D:
       - {x: 0.089999996, y: 0.33499998}
       - {x: 0.07, y: 0.355}
   m_UseDelaunayMesh: 1
+--- !u!114 &278948672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 278948664}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a2afe408c123c242970502fef854c28, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
 --- !u!1 &376466349
 GameObject:
   m_ObjectHideFlags: 0

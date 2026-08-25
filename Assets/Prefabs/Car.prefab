@@ -4987,7 +4987,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   joystick: {fileID: 0}
   animator: {fileID: 3310547785440767866}
-  particleSystem: {fileID: 4087189542043466285}
+  carParticles: {fileID: 4087189542043466285}
 --- !u!95 &3310547785440767866
 Animator:
   serializedVersion: 7
