@@ -81,7 +81,7 @@ public class npc : MonoBehaviour, NpcInteractable
             {
                 activator.Activate();
             }
-            reset();
+            Reset();
         }
     }
 
@@ -95,7 +95,7 @@ public class npc : MonoBehaviour, NpcInteractable
         return speechBubbleIcon;
     }
 
-    public void reset()
+    public void Reset()
     {
         UIManager.Instance.npcPlayerIcon.SetActive(false);
         speechBubbleIcon.SetActive(false);

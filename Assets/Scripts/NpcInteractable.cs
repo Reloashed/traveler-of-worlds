@@ -7,5 +7,5 @@ public interface NpcInteractable
     public GameObject interactIcon();
     string[] speechBubles();
     GameObject speechBubble();
-    void reset();
+    void Reset();
 }

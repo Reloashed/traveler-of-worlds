@@ -54,7 +54,7 @@ public class InteractionDetector : MonoBehaviour
         }
         if (collision.TryGetComponent(out NpcInteractable npcInteractable) && npcInteractable == npcInteractableInRange)
         {
-            npcInteractable.reset();
+            npcInteractable.Reset();
             npcInteractableInRange = null;
             interactionButton.SetActive(false);
         }
