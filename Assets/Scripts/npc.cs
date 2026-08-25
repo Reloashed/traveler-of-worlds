@@ -1,7 +1,6 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.InputSystem;
-using System.Runtime.InteropServices;
 
 public class npc : MonoBehaviour, NpcInteractable
 {

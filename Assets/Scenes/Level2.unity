@@ -903,6 +903,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a2afe408c123c242970502fef854c28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  portal: {fileID: 448513749}
+  speechBubbleIcon: {fileID: 947737974}
+  animator: {fileID: 278948666}
+  audioSource: {fileID: 278948665}
+  audioClip: {fileID: 8300000, guid: 4b01826169b0fc64a98004540e3c69c5, type: 3}
 --- !u!1 &376466349
 GameObject:
   m_ObjectHideFlags: 0
@@ -1012,7 +1017,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!82 &448513750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1181,7 +1186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f387130300656094a82c2c8878550e02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  nextLevel: Level2
+  nextLevel: Level3
 --- !u!50 &448513753
 Rigidbody2D:
   serializedVersion: 5
@@ -1299,8 +1304,8 @@ Transform:
   m_GameObject: {fileID: 448513749}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 99.139, y: 1.057, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 74.39, y: 1.12, z: 0}
+  m_LocalScale: {x: -1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

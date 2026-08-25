@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -62,7 +63,17 @@ public class Player : MonoBehaviour
 
     public void Dance()
     {
-        Debug.Log("Dance Mance");
         danceButton.SetActive(false);
+        StartCoroutine(CoRoutDance());
+    }
+
+    IEnumerator CoRoutDance()
+    {
+        animator.speed = 0.6f;
+        animator.SetBool("isDancing", true);
+        yield return new WaitForSeconds(10f);
+        animator.SetBool("isDancing", false);
+        animator.speed = 1f;
+        HipHopNPC.Instance.ShowPortal();
     }
 }
