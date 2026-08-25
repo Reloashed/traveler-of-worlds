@@ -2055,7 +2055,7 @@ MonoBehaviour:
   animator: {fileID: 2145414548}
   joystick: {fileID: 516671009}
   moveSpeed: 0.1
-  jumpForce: 7
+  jumpForce: 6
   isGrounded: 0
   danceButton: {fileID: 769024642}
 --- !u!50 &2145414551
