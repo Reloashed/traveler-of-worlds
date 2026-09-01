@@ -10,7 +10,6 @@ TagManager:
   - CarSpawn
   - Portal
   - ActivatorNPC
-  - Level2Activator
   layers:
   - Default
   - TransparentFX

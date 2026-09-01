@@ -15,7 +15,7 @@ public class SpawnManager : MonoBehaviour
     public GameObject jumpButton;
 
     private GameObject carInstance;
-    private int currentLevel = 1;
+    [SerializeField] private int currentLevel = 1;
     private bool loadCar;
 
     private void Awake()

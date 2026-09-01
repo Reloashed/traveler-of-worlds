@@ -6,9 +6,21 @@ public class CarMovement : MonoBehaviour
     private bool isParticleOn;
 
     public FixedJoystick joystick;
-    private float moveSpeed = 1f;
+    public float moveSpeed = 0.3f;
     public Animator animator;
     public ParticleSystem carParticles;
+    public AudioSource audioSource;
+    public AudioClip idleAudio;
+    public AudioClip driveAudio;
+    private bool wasDriving;
+
+    void Start()
+    {
+        wasDriving = false;
+        audioSource.clip = idleAudio;
+        audioSource.loop = true;
+        audioSource.Play();
+    }
 
     void FixedUpdate()
     {
@@ -24,13 +36,18 @@ public class CarMovement : MonoBehaviour
         {
             transform.localScale = new Vector3(-2, 2, 2);
         }
-        if (hInput != 0)
+
+        bool isDriving = hInput != 0;
+
+        if (isDriving)
         {
             if (!isParticleOn)
             {
                 carParticles.Play();
                 isParticleOn = true;
             }
+            audioSource.clip = driveAudio;
+            audioSource.Play();
         }
         else
         {
@@ -39,7 +56,27 @@ public class CarMovement : MonoBehaviour
                 carParticles.Stop();
                 isParticleOn = false;
             }
+            audioSource.clip = idleAudio;
+            audioSource.Play();
         }
-        animator.SetBool("isDriving", hInput != 0);
+
+        if (isDriving != wasDriving)
+        {
+            if (isDriving)
+            {
+                audioSource.clip = driveAudio;
+            }
+            else
+            {
+                audioSource.clip = idleAudio;
+            }
+
+            audioSource.loop = true;
+            audioSource.Play();
+
+            wasDriving = isDriving;
+        }
+
+        animator.SetBool("isDriving", isDriving);
     }
 }

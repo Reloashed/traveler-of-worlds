@@ -1873,6 +1873,7 @@ MonoBehaviour:
   carInteractIcon: {fileID: 1261656941}
   exitCarButton: {fileID: 297779643}
   jumpButton: {fileID: 1619536571}
+  currentLevel: 1
 --- !u!1 &1945518047
 GameObject:
   m_ObjectHideFlags: 0
