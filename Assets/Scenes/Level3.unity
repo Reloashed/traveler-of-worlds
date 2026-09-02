@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 83258511}
   - component: {fileID: 83258510}
   - component: {fileID: 83258509}
-  - component: {fileID: 83258508}
+  - component: {fileID: 83258516}
   m_Layer: 0
   m_Name: ferdinand_npc
   m_TagString: ActivatorNPC
@@ -142,23 +142,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &83258508
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 83258507}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7a2afe408c123c242970502fef854c28, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: '::'
-  portal: {fileID: 0}
-  speechBubbleIcon: {fileID: 1319410958}
-  animator: {fileID: 83258512}
-  audioSource: {fileID: 83258511}
-  audioClip: {fileID: 8300000, guid: 4b01826169b0fc64a98004540e3c69c5, type: 3}
 --- !u!50 &83258509
 Rigidbody2D:
   serializedVersion: 5
@@ -470,6 +453,19 @@ Transform:
   - {fileID: 1319410960}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &83258516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83258507}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a600fe400e8e76442846e1117f883f20, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  portal: {fileID: 1246473974}
 --- !u!1 &341098593
 GameObject:
   m_ObjectHideFlags: 0
