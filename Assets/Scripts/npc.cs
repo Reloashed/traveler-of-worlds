@@ -21,7 +21,6 @@ public class npc : MonoBehaviour, NpcInteractable
         UIManager.Instance.talkText.text = "";
         isTalking = false;
         UIManager.Instance.npcPlayerIcon.SetActive(false);
-        UIManager.Instance.talkTextBg.SetActive(false);
         speechBubbleIcon.SetActive(false);
         if (isActivator)
         {
@@ -49,7 +48,6 @@ public class npc : MonoBehaviour, NpcInteractable
             UIManager.Instance.npcPlayerIcon.SetActive(false);
             isTalking = true;
             speechBubbleIcon.SetActive(true);
-            UIManager.Instance.talkTextBg.SetActive(true);
             animator.SetBool("isTalking", true);
             startChat(iterator);
         }
@@ -99,7 +97,6 @@ public class npc : MonoBehaviour, NpcInteractable
         UIManager.Instance.npcPlayerIcon.SetActive(false);
         speechBubbleIcon.SetActive(false);
         UIManager.Instance.talkText.text = "";
-        UIManager.Instance.talkTextBg.SetActive(false);
         isTalking = false;
         animator.SetBool("isTalking", false);
         iterator = 0;

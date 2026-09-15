@@ -12,12 +12,15 @@ public class CarMovement : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip idleAudio;
     public AudioClip driveAudio;
+    public float idleVolume = 0.35f;
+    public float driveVolume = 1f;
     private bool wasDriving;
 
     void Start()
     {
         wasDriving = false;
         audioSource.clip = idleAudio;
+        audioSource.volume = idleVolume;
         audioSource.loop = true;
         audioSource.Play();
     }
@@ -37,7 +40,7 @@ public class CarMovement : MonoBehaviour
             transform.localScale = new Vector3(-2, 2, 2);
         }
 
-        bool isDriving = hInput != 0;
+        bool isDriving = Mathf.Abs(hInput) > 0.001f;
 
         if (isDriving)
         {
@@ -46,8 +49,6 @@ public class CarMovement : MonoBehaviour
                 carParticles.Play();
                 isParticleOn = true;
             }
-            audioSource.clip = driveAudio;
-            audioSource.Play();
         }
         else
         {
@@ -56,21 +57,12 @@ public class CarMovement : MonoBehaviour
                 carParticles.Stop();
                 isParticleOn = false;
             }
-            audioSource.clip = idleAudio;
-            audioSource.Play();
         }
 
         if (isDriving != wasDriving)
         {
-            if (isDriving)
-            {
-                audioSource.clip = driveAudio;
-            }
-            else
-            {
-                audioSource.clip = idleAudio;
-            }
-
+            audioSource.clip = isDriving ? driveAudio : idleAudio;
+            audioSource.volume = isDriving ? driveVolume : idleVolume;
             audioSource.loop = true;
             audioSource.Play();
 
