@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     {
         currentLevel++;
 
-        if (currentLevel >= 3)
+        if (currentLevel >= 2) // 3
         {
             loadCar = true;
         }

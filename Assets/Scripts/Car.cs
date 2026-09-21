@@ -66,6 +66,7 @@ public class Car : MonoBehaviour, Interactable
         jumpButton.SetActive(true);
         player.transform.localPosition = Vector2.right * 2f;
         player.transform.SetParent(null);
+        player.transform.rotation = Quaternion.identity;
         player.layer = LayerMask.NameToLayer("Player");
         player.GetComponent<PolygonCollider2D>().enabled = true;
         player.GetComponent<Player>().enabled = true;

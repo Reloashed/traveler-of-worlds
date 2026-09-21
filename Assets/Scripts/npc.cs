@@ -14,6 +14,7 @@ public class npc : MonoBehaviour, NpcInteractable
     public AudioSource audioSource;
     public AudioClip[] audioClips;
     public bool isActivator;
+    public bool isAnimated = true;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -48,7 +49,10 @@ public class npc : MonoBehaviour, NpcInteractable
             UIManager.Instance.npcPlayerIcon.SetActive(false);
             isTalking = true;
             speechBubbleIcon.SetActive(true);
-            animator.SetBool("isTalking", true);
+            if (isAnimated)
+            {
+                animator.SetBool("isTalking", true);
+            }
             startChat(iterator);
         }
     }
@@ -98,7 +102,10 @@ public class npc : MonoBehaviour, NpcInteractable
         speechBubbleIcon.SetActive(false);
         UIManager.Instance.talkText.text = "";
         isTalking = false;
-        animator.SetBool("isTalking", false);
+        if (isAnimated)
+        {
+            animator.SetBool("isTalking", false);
+        }
         iterator = 0;
     }
 }

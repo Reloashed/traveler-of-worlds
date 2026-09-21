@@ -4960,7 +4960,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &4939695535238895608
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4993,6 +4993,8 @@ MonoBehaviour:
   audioSource: {fileID: 1243361721037622135}
   idleAudio: {fileID: 8300000, guid: 2c4ee056f470893419b6d059b305ef01, type: 3}
   driveAudio: {fileID: 8300000, guid: 9ae12ccc909d8984aa3d920bd5f897ab, type: 3}
+  idleVolume: 0.35
+  driveVolume: 1
 --- !u!95 &3310547785440767866
 Animator:
   serializedVersion: 7

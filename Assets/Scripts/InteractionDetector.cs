@@ -3,13 +3,11 @@ using TMPro;
 
 public class InteractionDetector : MonoBehaviour
 {
-
     private Interactable interactableInRange = null;
     private NpcInteractable npcInteractableInRange = null;
 
     public GameObject interactionButton;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         interactionButton.SetActive(false);
@@ -17,14 +15,14 @@ public class InteractionDetector : MonoBehaviour
 
     public void OnInteract()
     {
-        if (interactableInRange != null)
-        {
-            interactableInRange.Interact();
-        }
         if (npcInteractableInRange != null)
         {
             interactionButton.SetActive(false);
             npcInteractableInRange.Interact();
+        }
+        else if (interactableInRange != null)
+        {
+            interactableInRange.Interact();
         }
     }
 
@@ -50,13 +48,21 @@ public class InteractionDetector : MonoBehaviour
         {
             interactableInRange.interactIcon().SetActive(false);
             interactableInRange = null;
-            interactionButton.SetActive(false);
+
+            if (npcInteractableInRange == null)
+            {
+                interactionButton.SetActive(false);
+            }
         }
         if (collision.TryGetComponent(out NpcInteractable npcInteractable) && npcInteractable == npcInteractableInRange)
         {
             npcInteractable.Reset();
             npcInteractableInRange = null;
-            interactionButton.SetActive(false);
+
+            if (interactableInRange == null)
+            {
+                interactionButton.SetActive(false);
+            }
         }
     }
 }
