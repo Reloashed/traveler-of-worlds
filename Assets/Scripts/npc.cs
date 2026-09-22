@@ -31,10 +31,11 @@ public class npc : MonoBehaviour, NpcInteractable
 
     void Update()
     {
+        if (!isTalking) return;
+
         if (Touchscreen.current != null)
         {
             var touch = Touchscreen.current.primaryTouch;
-
             if (touch.press.wasPressedThisFrame)
             {
                 startChat(iterator);
@@ -76,7 +77,8 @@ public class npc : MonoBehaviour, NpcInteractable
             audioSource.Play();
             UIManager.Instance.talkText.text = voicelines[i];
             iterator++;
-        } else
+        }
+        else
         {
             if (iterator > 0 && isActivator)
             {

@@ -64,7 +64,7 @@ public class Car : MonoBehaviour, Interactable
         isOccupied = false;
         exitButton.SetActive(false);
         jumpButton.SetActive(true);
-        player.transform.localPosition = Vector2.right * 2f;
+        player.transform.localPosition = Vector2.right * 1.1f;
         player.transform.SetParent(null);
         player.transform.rotation = Quaternion.identity;
         player.layer = LayerMask.NameToLayer("Player");

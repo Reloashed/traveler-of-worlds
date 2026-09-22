@@ -33,7 +33,7 @@ public class SpawnManager : MonoBehaviour
     {
         currentLevel++;
 
-        if (currentLevel >= 2) // 3
+        if (currentLevel >= 3) // should be 3
         {
             loadCar = true;
         }
@@ -80,6 +80,7 @@ public class SpawnManager : MonoBehaviour
             if (carSpawn != null)
             {
                 carInstance.transform.position = carSpawn.transform.position;
+                carInstance.transform.rotation = Quaternion.identity;
             }
         }
     }
