@@ -33,13 +33,24 @@ public class SpawnManager : MonoBehaviour
     {
         currentLevel++;
 
-        if (currentLevel >= 3 && currentLevel != 5) // should be 3, 5
+        if (currentLevel >= 3) // should be 3
         {
             loadCar = true;
         }
         else
         {
             loadCar = false;
+        }
+
+        if (currentLevel == 5)
+        {
+            loadCar = false;
+
+            if (carInstance != null)
+            {
+                Destroy(carInstance);
+                carInstance = null;
+            }
         }
 
         SceneManager.LoadScene("Level" + currentLevel);

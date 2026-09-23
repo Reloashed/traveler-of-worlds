@@ -18,6 +18,7 @@ public class CarMovement : MonoBehaviour
 
     void Start()
     {
+        audioSource.Stop();
         wasDriving = false;
         audioSource.clip = idleAudio;
         audioSource.volume = idleVolume;
